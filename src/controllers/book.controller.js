@@ -1,5 +1,16 @@
+const connection = require('../helper/db');
+
 function getBook(req, res) {
-  res.json({ book: ['manga', 'novel', 'biography'] });
+  connection.query('SELECT * FROM books', function (err, results, fields) {
+    if (err) {
+      res.status(500).json({ message: "Ooopss, terjadi kesalahan pada server..." });
+    } else {
+      fields.forEach((field) => {
+        console.log(field.name);
+      })
+      res.status(200).json({ message: "Query berhasil", result: results });
+    }
+  });
 }
 
 function postBook(req, res) {
