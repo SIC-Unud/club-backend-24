@@ -7,9 +7,9 @@ bookRouter.get('/', getBook);
 
 bookRouter.post('/', postBook);
 
-bookRouter.put('/', putBook);
+bookRouter.put('/:id', putBook);
 
-bookRouter.delete('/', deleteBook)
+bookRouter.delete('/:id', deleteBook)
 
 
 module.exports = { bookRouter }

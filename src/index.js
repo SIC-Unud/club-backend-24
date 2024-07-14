@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
 // middleware untuk autentikasi
-app.use(authRouter);
+// app.use(authRouter);
 
 app.get('/', function (req, res) {
   res.send('Hello world');
